@@ -1,0 +1,4 @@
+.env
+vidcha.db
+__pycache__/*
+.vscode/*
