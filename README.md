@@ -3,7 +3,7 @@ Discord BOT for Youtube Subscription/Notification using Python 3
 
 ## Requirement
 - Python >= 3.6 (I'm testing on 3.9 but all 3.x should work, 3.6 or later for sure)
-- [Discord Application](https://discord.com/developers)
+- [Discord Application](https://discord.com/developers) (aka. `Bot`)
 - [Youtube Data API](https://developers.google.com/youtube/v3/)
 - little knowledge about Python, Pip, API, Discord (Also [Thai](https://en.wikipedia.org/wiki/Thai_language) if you want to translate this app, just kidding :smile:)
 
@@ -38,7 +38,9 @@ Discord BOT for Youtube Subscription/Notification using Python 3
 ### Help commands ###
 ![help](https://i.imgur.com/nEF2bwk.png)
 
-
+## References
+- [Youtube Data API](https://developers.google.com/youtube/v3)
+- [Discord.py](https://discordpy.readthedocs.io/en/stable/)
 
 ## License
 ![We don't do that here](https://i.imgur.com/RUdPyQP.jpg)
