@@ -1,4 +1,4 @@
-# vidcha-bot
+# VidCha Bot
 Discord BOT for Youtube Subscription/Notification using Python 3
 
 ## Requirement
