@@ -292,7 +292,7 @@ async def on_ready():
     Bot connected to Discord server
     """
     print(f"Hello :) I'm {client.user}. connected to discord headquarter via WebSocket!")
-    await client.change_presence(activity=discord.Game(name=f"use '{p_command('help')}' to show all commands! <3"))
+    
     check_for_updates.start()
 
 @client.event
@@ -326,8 +326,27 @@ async def multicast(d_channels: list, video):
         if _channel:
             await _channel.send(message)
 
+STATUS_MESSAGE = [
+    f"use '{p_command('help')}' to show all commands! <3",
+    f"please send '{p_command('help')}' to me. ?",
+    f"no one calling me :( '{p_command('help')}' to myself.",
+    # f"did you see 'Henlo'?. I will call her! '{p_command('help')}'",
+    f"I need your '{p_command('help')}'",
+    f"I'm tired, '{p_command('help')}' me :(",
+]
+S_INDEX = 0
+
 @tasks.loop(seconds=UPDATE_INTERVAL)
 async def check_for_updates():
+
+    global S_INDEX
+
+    print("Interval at " + datetime.datetime.now().strftime(r"%m/%d/%Y, %H:%M:%S"), S_INDEX)
+
+    await client.change_presence(activity=discord.Game(name=STATUS_MESSAGE[S_INDEX]))
+    
+    S_INDEX = (S_INDEX + 1) % len(STATUS_MESSAGE)
+
     yt_channels = YoutubeChannel.select(YoutubeChannel).distinct().join(
             Subscription, on=(YoutubeChannel.youtube_id == Subscription.youtube_id)
         )  # channels that's still have subscriptions
