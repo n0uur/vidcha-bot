@@ -3,3 +3,4 @@ python-dotenv
 peewee
 requests
 xmltodict
+python-dateutil

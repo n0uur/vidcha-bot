@@ -12,7 +12,7 @@ import datetime
 
 from dotenv import load_dotenv
 from discord.ext import commands, tasks
-
+from dateutil import parser
 
 from model import *
 
@@ -79,10 +79,11 @@ def get_need_to_notify_vids(feed, last_notify_id):
     for entry in feed.get('entry', []):
 
         # time diff is less than 10 minutes
-        published_time = datetime.datetime.strptime(entry['published'], "%Y-%m-%dT%H:%M:%S+00:00")
-        current_time = datetime.datetime.utcnow()
+        # published_time = datetime.datetime.strptime(entry['published'], "%Y-%m-%dT%H:%M:%S+00:00")
+        published_time = parser.parse(entry['published']).timestamp()
+        current_time = datetime.datetime.now(datetime.timezone.utc).timestamp()
 
-        if (current_time - published_time).seconds > 600:
+        if abs(current_time - published_time) > 600:
             break
 
         # is not notified video
