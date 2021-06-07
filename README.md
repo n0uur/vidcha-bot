@@ -14,7 +14,10 @@ Discord BOT for Youtube Subscription/Notification using Python 3
     > pip install -r requirements.txt
     ```
 3. config your Bot using `.env` file. you can use `.env.example` file for reference or just copy paste and rename it to `.env`.
-4. create database by running `db_init.py`. For Windows guy just double-click it!
+4. migrate your database using `pem`
+    ```
+    > pem migrate
+    ```
 5. run your Bot `bot.py`
 
     ```
