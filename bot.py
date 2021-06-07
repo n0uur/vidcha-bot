@@ -9,6 +9,7 @@ import discord
 import requests
 import xmltodict
 import datetime
+import time
 
 from dotenv import load_dotenv
 from discord.ext import commands, tasks
@@ -341,7 +342,9 @@ async def check_for_updates():
 
     global S_INDEX
 
-    print("Interval at " + datetime.datetime.now().strftime(r"%m/%d/%Y, %H:%M:%S"), S_INDEX)
+    print("[Log] Interval at " + datetime.datetime.now().strftime(r"%m/%d/%Y, %H:%M:%S"), S_INDEX)
+
+    start_time = time.time()
 
     await client.change_presence(activity=discord.Game(name=STATUS_MESSAGE[S_INDEX]))
     
@@ -382,6 +385,8 @@ async def check_for_updates():
 
         channel.youtube_last_notify_vid = last_video_id
         channel.save()
+
+    print("[Log] Ended Interval using : %.2f seconds" % (time.time() - start_time))
 
 """
 Bot ignition, brrmm! brrmm!

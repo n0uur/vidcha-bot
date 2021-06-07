@@ -4,3 +4,5 @@ peewee
 requests
 xmltodict
 python-dateutil
+pymysql
+peewee-migrations
