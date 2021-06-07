@@ -24,6 +24,16 @@ Discord BOT for Youtube Subscription/Notification using Python 3
     > python bot.py
     ```
 
+## Pro
+
+- No need Webhook or Public IP
+- Lightweight
+- Easy to use
+
+## Cons
+- BUGS
+- Not a `realtime` update (cause Youtube's RSS feed cache)
+
 ## Conclusions
 - This bot is now Thai, you can translate it by replacing text in it's code
 - This boi is not smooth like criminal. I'm just creating it cause I need to rest from my work for about a few hours.
