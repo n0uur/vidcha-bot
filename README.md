@@ -1,6 +1,8 @@
 # VidCha Bot
 Discord BOT for Youtube Subscription/Notification using Python 3
 
+### This may not function properly.
+
 ## Requirement
 - Python >= 3.6 (I'm testing on 3.9 but all 3.x should work, 3.6 or later for sure)
 - [Discord Application](https://discord.com/developers) (aka. `Bot`)
